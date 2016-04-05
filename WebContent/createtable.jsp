@@ -6,18 +6,20 @@
 <title>createtable.html</title>
 </head>
 <body>
-Hello <%out.print(request.getParameter("Name"));%>. Here is your table:<br>
+Hello <%out.print(request.getParameter("Name"));%>. Here is your table:
+<br>
 <table style="text-align: left; width: 100%;" border="1" cellpadding="2"
 cellspacing="2">
 <tbody>
 <%int rowAmt = Integer.parseInt(request.getParameter("rowAmt"));%>
 <%int columnAmt = Integer.parseInt(request.getParameter("columnAmt"));
-if (rowAmt<=0){
+if (rowAmt<1){
 	response.sendRedirect("classexercise.jsp?Error=1&Name="+request.getParameter("Name"));
 }
-if (columnAmt<=0){
+else if (columnAmt<1){
 	response.sendRedirect("classexercise.jsp?Error=2&Name="+request.getParameter("Name"));
-}%>
+}
+%>
 <%for(int i=1;i<=rowAmt;i++){ %>
 <tr>
 <%for(int j=1;j<=columnAmt;j++){%>

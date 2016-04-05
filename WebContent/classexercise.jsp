@@ -8,6 +8,7 @@ http-equiv="content-type">
 </head>
 <body>
 Please enter the dimensions of the desired table below: 
+<br>
 <% String error = request.getParameter("Error");
     if(error!=null && error.equals("1")){
     	out.println("Hello " + request.getParameter("Name") +", PLEASE PROVIDE A ROW VALUE >=1 <br>");
